@@ -33,21 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   })
+})
 
-  // Typing effect
-  const typingText = document.getElementById("typing-text");
-  const textToType = "Hello 👋, I'm Eliza!";
-  let i = 0;
+// Typing effect
+function typeWriter() {
+  const typingText = document.getElementById("typing-text")
+  const textToType = "Hello, I'm Eliza!"
+  let i = 0
 
-  function typeWriter() {
+  function type() {
     if (i < textToType.length) {
-      typingText.innerHTML += textToType.charAt(i);
-      i++;
-      setTimeout(typeWriter, 100);
+      typingText.innerHTML += textToType.charAt(i)
+      i++
+      setTimeout(type, 100)
     }
   }
 
   if (typingText) {
-    typeWriter();
+    type()
   }
-})
+}
+
+// Call typeWriter when the DOM is loaded
+document.addEventListener("DOMContentLoaded", typeWriter)
+
+
