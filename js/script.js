@@ -33,28 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   })
-})
-
-// Typing effect
-function typeWriter() {
-  const typingText = document.getElementById("typing-text")
-  const textToType = "Hello, I'm Eliza!"
-  let i = 0
-
-  function type() {
-    if (i < textToType.length) {
-      typingText.innerHTML += textToType.charAt(i)
-      i++
-      setTimeout(type, 100)
-    }
-  }
-
-  if (typingText) {
-    type()
-  }
-}
-
-// Call typeWriter when the DOM is loaded
-document.addEventListener("DOMContentLoaded", typeWriter)
 
 
